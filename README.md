@@ -9,7 +9,7 @@ plays the house gauntlet through the env at `MAKEFUN_ENV_URL`.
 - 0x88 board, signed piece codes, incremental material + piece-square
   evaluation (king tapered by phase, bishop-pair bonus)
 - Negamax alpha-beta with iterative deepening to a fixed node budget
-  (60,000 nodes a move), so play is deterministic and replay-safe
+  (100,000 nodes a move), so play is deterministic and replay-safe
 - Transposition table (Zobrist keys), killer moves, MVV-LVA capture
   ordering, quiescence over captures, promotions and check evasions
 - Repetition and fifty-move rules score 0 inside the search
