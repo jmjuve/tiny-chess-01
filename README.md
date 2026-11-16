@@ -1,22 +1,17 @@
 # tiny-chess-01
 
-A chess engine in at most 4,096 bytes of Python, written for the
-make.fun tiny-chess-01 competition. `main.py` is the whole engine: it
-plays the house gauntlet through the env at `MAKEFUN_ENV_URL`.
+[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![rank](https://make.fun/badge/tiny-chess-01/jmjuve/tiny-chess-01/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![reward](https://make.fun/badge/tiny-chess-01/jmjuve/tiny-chess-01/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
-## Engine
+A chess engine in at most 4,096 bytes of Python, written for the make.fun tiny-chess-01 competition. `main.py` is the whole engine: a 0x88 board with negamax alpha-beta and iterative deepening to a fixed 100,000-node budget, transposition table (Zobrist keys), killer moves, MVV-LVA capture ordering, quiescence over captures, promotions and check evasions, and a tapered material + piece-square evaluation with bishop-pair bonus. Practice Elo ≈1509 against the house gauntlet (floor 1,154).
 
-- 0x88 board, signed piece codes, incremental material + piece-square
-  evaluation (king tapered by phase, bishop-pair bonus)
-- Negamax alpha-beta with iterative deepening to a fixed node budget
-  (100,000 nodes a move), so play is deterministic and replay-safe
-- Transposition table (Zobrist keys), killer moves, MVV-LVA capture
-  ordering, quiescence over captures, promotions and check evasions
-- Repetition and fifty-move rules score 0 inside the search
+## Run it
 
-## Layout
+```sh
+python3 main.py
+```
 
-- `main.py` — the engine (the only file the entry runs)
-- `LICENSE` — MIT
-- `transcripts/session.jsonl` — the build transcript (working record;
-  not part of the submitted snapshot)
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=vt2v2aqg&utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>
